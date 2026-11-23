@@ -741,3 +741,24 @@ button {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ===============================
+   7. JavaScript-блоки (КР №4)
+   =============================== */
+
+/* Учебный блок проверки JavaScript на главной странице. */
+.js-message {
+  margin: 0 0 var(--space-md);
+  font-weight: bold;
+}
+
+.product-output {
+  margin: 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  background-color: #111827;
+  color: #f9fafb;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
