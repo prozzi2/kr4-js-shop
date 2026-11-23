@@ -169,3 +169,49 @@ const products = [
     specs: { 'Сила хвата': '25 / 24 кг', 'Вес': '5,6 кг', 'Техника': 'не предусмотрена', 'Гарантия': '1 год бытовых задач' }
   }
 ];
+
+/* ---------- Функции для одного товара ----------
+   Нужны на нескольких страницах (каталог, товар, корзина, заявка),
+   поэтому лежат рядом с данными: data.js подключается первым. */
+
+// Названия категорий для покупателя.
+const categoryNames = {
+  sport: 'Для армрестлинга',
+  daily: 'На каждый день',
+  set: 'Комплекты'
+};
+
+// Цена для покупателя: 32000 → «32 000 ₽».
+function formatPrice(price) {
+  return `${price.toLocaleString('ru-RU')} ₽`;
+}
+
+// Размер скидки в рублях.
+function calculateDiscount(price, discountPercent) {
+  return price * discountPercent / 100;
+}
+
+// Итоговая цена со скидкой. Округляем до рубля.
+function calculateFinalPrice(price, discountPercent) {
+  const discountValue = calculateDiscount(price, discountPercent);
+  return Math.round(price - discountValue);
+}
+
+// Итоговая цена конкретного товара.
+function getFinalPrice(item) {
+  return calculateFinalPrice(item.price, item.discountPercent);
+}
+
+// Статус товара по логическому полю isAvailable.
+function getProductStatus(item) {
+  if (item.isAvailable) {
+    return 'В наличии';
+  }
+
+  return 'Нет в наличии';
+}
+
+// find: товар с нужным id или undefined, если такого нет.
+function findProductById(items, id) {
+  return items.find((item) => item.id === id);
+}
