@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/data.js" defer></script>
   <script src="js/kr3-scripts.js" defer></script>
+  <script src="js/validation.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
 
   <div class="order-layout">
     <div>
-      <form class="order-form js-form" id="order-form" action="#" method="post" data-success="order-success" novalidate>
+      <form class="order-form" id="order-form" action="#" method="post" data-validate="order" novalidate>
         <div class="order-form__group">
           <label class="order-form__label" for="order-product">Товар <span class="order-form__required" aria-hidden="true">*</span></label>
           <select class="order-form__select" id="order-product" name="product" required aria-describedby="order-product-error">
@@ -82,7 +83,7 @@
 
         <div class="order-form__group">
           <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
-          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required data-error="Введите телефон в формате +7 (900) 000-00-00" aria-describedby="order-phone-hint order-phone-error">
+          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" required aria-describedby="order-phone-hint order-phone-error">
           <p class="form-note" id="order-phone-hint">Формат: +7 (900) 000-00-00</p>
           <p class="form-error" id="order-phone-error" hidden></p>
         </div>
@@ -121,7 +122,7 @@
 
         <div class="order-form__group order-form__group--wide">
           <label class="order-form__check" for="order-agreement">
-            <input id="order-agreement" name="agreement" type="checkbox" required aria-describedby="order-agreement-error" data-error="Отметьте согласие на обработку данных">
+            <input id="order-agreement" name="agreement" type="checkbox" required aria-describedby="order-agreement-error">
             Я согласен на обработку данных
           </label>
           <p class="form-error" id="order-agreement-error" hidden></p>
@@ -131,9 +132,9 @@
           <button class="button" type="submit">Отправить заявку</button>
           <button class="button button--ghost" type="reset">Очистить</button>
         </div>
-      </form>
 
-      <p class="success-message" id="order-success" role="status"></p>
+        <p class="form-message" aria-live="polite"></p>
+      </form>
     </div>
 
     <aside class="order-aside" aria-label="Информация о заказе">
