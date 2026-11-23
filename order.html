@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/kr3-scripts.js" defer></script>
   <script src="js/validation.js" defer></script>
   <script src="js/main.js" defer></script>
@@ -31,11 +34,13 @@
         <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
         <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="cart.html">Корзина (<span data-cart-count>0</span>)</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="onas.html">О нас</a></li>
       </ul>
     </nav>
   </div>
 </header>
+<p class="shop-status" data-shop-status role="status" aria-live="polite"></p>
 
 <main class="main" id="main" tabindex="-1">
   <h1 class="page-title">Оформление заявки</h1>
@@ -53,7 +58,7 @@
             <option value="1">Рука «Титан» — правая мужская — 32&nbsp;000&nbsp;₽</option>
             <option value="2">Рука «Титан» — левая мужская — 31&nbsp;000&nbsp;₽</option>
             <option value="3">Рука «Валькирия» — правая женская — 21&nbsp;000&nbsp;₽</option>
-            <option value="4">Рука «Валькирия» — левая женская — 20&nbsp;500&nbsp;₽</option>
+            <option value="4">Рука «Валькирия» — левая женская — 20&nbsp;400&nbsp;₽</option>
             <option value="5">Рука «Будни» — правая мужская — 10&nbsp;000&nbsp;₽</option>
             <option value="6">Рука «Будни» — левая мужская — 10&nbsp;000&nbsp;₽</option>
             <option value="7">Рука «Грация» — правая женская — 9&nbsp;000&nbsp;₽</option>

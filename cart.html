@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — Shop_ot_bob</title>
+  <meta name="description" content="Корзина Shop_ot_bob">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/kr3-scripts.js" defer></script>
+  
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+<header class="page-header">
+  <div class="site-header">
+    <a class="site-logo" href="index.html">Shop_ot_bob</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+      Меню
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="cart.html">Корзина (<span data-cart-count>0</span>)</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="onas.html">О нас</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<p class="shop-status" data-shop-status role="status" aria-live="polite"></p>
+
+<main class="main" id="main" tabindex="-1">
+<h1>Корзина</h1><p>Товары сохраняются в этом браузере. Максимум 10 штук каждого товара.</p>
+<section tabindex="-1" aria-label="Товары в корзине">
+<p class="cart-empty">Корзина пуста. <a href="catalog.html">Выбрать товары</a></p>
+<div class="cart-content" hidden><ul data-cart-container class="cart-list"></ul>
+<button class="button button--ghost" data-clear-cart type="button">Очистить корзину</button>
+<dl class="order-summary"><div><dt>Количество</dt><dd data-summary="count"></dd></div><div><dt>Товары</dt><dd data-summary="subtotal"></dd></div><div><dt>Скидка</dt><dd data-summary="promo"></dd></div><div><dt>Итого без доставки</dt><dd data-summary="total"></dd></div></dl>
+<p class="cart-delivery-note"></p>
+<form id="promo-form"><label for="promo">Промокод</label> <input id="promo" name="promo" placeholder="ARM10" maxlength="30"><button class="button" type="submit">Применить</button></form>
+<p class="promo-message" role="status"></p><p class="promo-applied" hidden>Применён <span data-promo-code></span> <button type="button" data-remove-promo>Убрать</button></p>
+<p>Учебные промокоды: ARM10 (10%) и STUDENT5 (5%).</p>
+<p>Заявка оформляется на один выбранный товар. Состав корзины и промокод в неё не переносятся.</p><a class="button" href="order.html">Заявка на товар</a>
+</div></section></main><footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <p class="site-footer__title">Shop_ot_bob</p>
+      <p>Учебный интернет-магазин необычных товаров с характером.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Навигация в подвале">
+      <p class="site-footer__title">Разделы</p>
+      <ul class="site-footer__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="onas.html">О нас</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <p class="site-footer__title">Контакты</p>
+      <ul class="site-footer__list">
+        <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li><a href="mailto:shop@example.com">shop@example.com</a></li>
+      </ul>
+      <p class="site-footer__copy">&copy; 2026 Учебный проект. Все права защищены. Работал Исмаилов Полад, ЭФБО-04-25.</p>
+      <p class="site-footer__copy">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </div>
+</footer>
+
+<a class="back-to-top" href="#top" aria-label="Наверх, к началу страницы"><span aria-hidden="true">↑</span></a>
+</body>
+</html>

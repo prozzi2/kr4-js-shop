@@ -327,6 +327,8 @@ if (sortSelect) {
 
 // Сброс: возвращаем поля и состояние к начальным значениям.
 function resetCatalogFilters() {
+  catalogState.sort = 'default';
+  sortSelect.value = 'default';
   catalogState.query = '';
   catalogState.category = 'all';
   catalogState.gender = 'all';
@@ -380,7 +382,7 @@ if (productsContainer) {
       return;
     }
 
-    console.log(`Товар добавлен в корзину: ${selectedItem.title}`);
+    showToast(addToCart(productId) ? `«${selectedItem.title}» добавлен в корзину.` : 'Нельзя добавить товар: нет в наличии или достигнут лимит 10 шт.');
   });
 }
 

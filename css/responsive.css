@@ -855,3 +855,17 @@ html {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* КР №4: корзина и сообщения */
+[hidden] { display: none !important; }
+.shop-status { margin: 0 auto; max-width: 1160px; padding: 0 1rem; color: #165c34; }
+.shop-status:empty { display: none; }
+.cart-list { list-style: none; padding: 0; }
+.cart-item { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #aaa; }
+.cart-item__info { flex: 1; min-width: 160px; }
+.cart-item__image { object-fit: contain; }
+.quantity-control { display: flex; gap: .5rem; }
+.quantity-control__input { width: 4rem; }
+.quantity-control__button { min-width: 44px; min-height: 44px; }
+#promo-form { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+#promo { max-width: 100%; min-height: 44px; }

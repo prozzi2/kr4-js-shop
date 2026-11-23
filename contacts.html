@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/kr3-scripts.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -30,11 +33,13 @@
         <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
         <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="cart.html">Корзина (<span data-cart-count>0</span>)</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="onas.html">О нас</a></li>
       </ul>
     </nav>
   </div>
 </header>
+<p class="shop-status" data-shop-status role="status" aria-live="polite"></p>
 
 <main class="main" id="main" tabindex="-1">
   <h1 class="page-title">Контакты</h1>

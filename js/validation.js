@@ -37,7 +37,8 @@ if (orderForm) {
   }
 
   function validateProduct() {
-    if (productSelect.value === '') {
+    const item = findProductById(products, Number(productSelect.value));
+    if (!item || !item.isAvailable) {
       showError(productSelect, 'Выберите товар.');
       return false;
     }
@@ -150,10 +151,11 @@ if (orderForm) {
     };
 
     console.log('Форма прошла учебную проверку; данные не отправлены.');
-    console.table(requestData);
+    // Персональные данные не записываются в консоль или хранилище.
 
     showFormMessage('Форма прошла учебную проверку. Данные не отправлены.', 'success');
     orderForm.reset();
+    showFormMessage('Заявка подготовлена. Данные не отправлены.', 'success');
   });
 
   // Первая проверка — когда пользователь уходит с поля (blur).
@@ -171,5 +173,6 @@ if (orderForm) {
   // Кнопка «Очистить» убирает и ошибки.
   orderForm.addEventListener('reset', () => {
     validators.forEach(([input]) => clearError(input));
+    formMessage.textContent = '';
   });
 }

@@ -16,141 +16,12 @@ document.documentElement.classList.add('js');
 
 // Те же товары, что в карточках каталога.
 // Нужны для страницы товара (product.html?id=N) и сводки заказа.
-const PRODUCTS = [
-  {
-    "id": 1,
-    "name": "Рука «Титан» — правая мужская",
-    "img": "pravaya_ruka",
-    "alt": "Рисунок: согнутая в локте правая мужская рука с крупным бицепсом и сжатым кулаком",
-    "price": 32000,
-    "old": null,
-    "stock": true,
-    "desc": "Флагман магазина. «Титан» создан для тех, кто выходит к столу за победой: усиленное предплечье, мёртвый хват и запас прочности на целый турнирный сезон. Подходит для борьбы правой рукой в любой весовой категории.",
-    "specs": {
-      "Сила хвата": "120 кг",
-      "Вес": "4,8 кг",
-      "Техника": "верх, крюк, трицепс",
-      "Гарантия": "2 турнирных сезона"
-    }
-  },
-  {
-    "id": 2,
-    "name": "Рука «Титан» — левая мужская",
-    "img": "levaya_ruka",
-    "alt": "Рисунок: согнутая в локте левая мужская рука с крупным бицепсом и сжатым кулаком",
-    "price": 31000,
-    "old": null,
-    "stock": true,
-    "desc": "Левая версия флагмана для тех, кто борется на обе руки. Тот же мёртвый хват и усиленное предплечье, зеркальная посадка и отдельная настройка под левостороннюю борьбу.",
-    "specs": {
-      "Сила хвата": "115 кг",
-      "Вес": "4,7 кг",
-      "Техника": "верх, крюк",
-      "Гарантия": "2 турнирных сезона"
-    }
-  },
-  {
-    "id": 3,
-    "name": "Рука «Валькирия» — правая женская",
-    "img": "prav_zhenskaya_ruka",
-    "alt": "Рисунок: согнутая в локте правая женская рука с рельефным бицепсом",
-    "price": 21000,
-    "old": null,
-    "stock": true,
-    "desc": "Лёгкая и быстрая рука для женского армрестлинга. Резкий старт, цепкая кисть и отличный контроль в борьбе верхом — выбор тех, кто побеждает техникой, а не только силой.",
-    "specs": {
-      "Сила хвата": "85 кг",
-      "Вес": "3,6 кг",
-      "Техника": "верх, боковое давление",
-      "Гарантия": "2 турнирных сезона"
-    }
-  },
-  {
-    "id": 4,
-    "name": "Рука «Валькирия» — левая женская",
-    "img": "lev_zhenskaya_ruka",
-    "alt": "Рисунок: согнутая в локте левая женская рука с рельефным бицепсом",
-    "price": 20500,
-    "old": 24000,
-    "stock": true,
-    "desc": "Левая «Валькирия» для борьбы на обе руки. Та же быстрая кисть и контроль, а сейчас ещё и по сниженной цене.",
-    "specs": {
-      "Сила хвата": "80 кг",
-      "Вес": "3,5 кг",
-      "Техника": "верх, боковое давление",
-      "Гарантия": "2 турнирных сезона"
-    }
-  },
-  {
-    "id": 5,
-    "name": "Рука «Будни» — правая мужская",
-    "img": "prav_ruka_kontur",
-    "alt": "Контурный рисунок: опущенная вниз правая мужская рука обычного телосложения",
-    "price": 10000,
-    "old": null,
-    "stock": true,
-    "desc": "Надёжная рука на каждый день: открыть банку, донести пакеты, пожать руку преподавателю после защиты. Для армрестлинга не предназначена — честно предупреждаем.",
-    "specs": {
-      "Сила хвата": "40 кг",
-      "Вес": "3,9 кг",
-      "Техника": "не предусмотрена",
-      "Гарантия": "1 год бытовых задач"
-    }
-  },
-  {
-    "id": 6,
-    "name": "Рука «Будни» — левая мужская",
-    "img": "lev_ruka_kontur",
-    "alt": "Контурный рисунок: опущенная вниз левая мужская рука обычного телосложения",
-    "price": 10000,
-    "old": null,
-    "stock": false,
-    "desc": "Левая рука для повседневных дел. Комплектуется с правой «Будни» для полного набора бытовых возможностей. Сейчас доступна под заказ.",
-    "specs": {
-      "Сила хвата": "38 кг",
-      "Вес": "3,9 кг",
-      "Техника": "не предусмотрена",
-      "Гарантия": "1 год бытовых задач"
-    }
-  },
-  {
-    "id": 7,
-    "name": "Рука «Грация» — правая женская",
-    "img": "prav_tonkaya_zhenskaya_ruka",
-    "alt": "Контурный рисунок: опущенная вниз тонкая правая женская рука",
-    "price": 9000,
-    "old": null,
-    "stock": true,
-    "desc": "Изящная рука на каждый день: печатать курсовую, держать кофе и листать конспекты. Для армрестлинга не предназначена.",
-    "specs": {
-      "Сила хвата": "25 кг",
-      "Вес": "2,8 кг",
-      "Техника": "не предусмотрена",
-      "Гарантия": "1 год бытовых задач"
-    }
-  },
-  {
-    "id": 8,
-    "name": "Рука «Грация» — левая женская",
-    "img": "lev_tonkaya_zhenskaya_ruka",
-    "alt": "Контурный рисунок: опущенная вниз тонкая левая женская рука",
-    "price": 9000,
-    "old": null,
-    "stock": true,
-    "desc": "Левая «Грация» в пару к правой: удобно держать телефон, пока правая пишет конспект. Для армрестлинга не предназначена.",
-    "specs": {
-      "Сила хвата": "24 кг",
-      "Вес": "2,8 кг",
-      "Техника": "не предусмотрена",
-      "Гарантия": "1 год бытовых задач"
-    }
-  }
-];
-
-// Форматируем цену: 32000 → «32 000 ₽».
-function formatPrice(value) {
-  return value.toLocaleString('ru-RU') + ' ₽';
-}
+// Совместимое представление для интерфейса КР №3; источник данных один.
+const PRODUCTS = products.map(item => ({
+  id: item.id, name: item.title, img: item.image, alt: item.alt,
+  price: getFinalPrice(item), old: item.discountPercent ? item.price : null,
+  stock: item.isAvailable, desc: item.description, specs: item.specs
+}));
 
 // Ищем товар по id из адресной строки, например product.html?id=3.
 function getProductFromUrl(paramName) {
@@ -314,7 +185,7 @@ document.querySelectorAll('.js-form').forEach((form) => {
     }
 
     // Текст появляется в области role="status" — скринридер его озвучит.
-    successMessage.textContent = 'Форма успешно отправлена! Мы свяжемся с вами.';
+    successMessage.textContent = 'Заявка подготовлена. Это учебная форма: данные не отправлены.';
     // Сообщение может оказаться за краем экрана — прокручиваем к нему.
     successMessage.scrollIntoView({ block: 'nearest' });
 
@@ -347,7 +218,11 @@ const productSection = document.getElementById('product');
 
 if (productSection) {
   // Без параметра id страница показывает товар, записанный в HTML.
-  const product = getProductFromUrl('id');
+  const requestedId = new URLSearchParams(location.search).get('id');
+  const product = requestedId === null ? PRODUCTS[0] : getProductFromUrl('id');
+  if (!product) {
+    productSection.textContent = 'Товар не найден. Вернитесь в каталог.';
+  }
 
   if (product) {
     const setText = (id, text) => {
@@ -375,7 +250,7 @@ if (productSection) {
     }
 
     const stockElement = document.getElementById('product-stock');
-    stockElement.textContent = product.stock ? 'В наличии' : 'Под заказ, 7–10 дней';
+    stockElement.textContent = product.stock ? 'В наличии' : 'Нет в наличии';
     stockElement.classList.toggle('product__stock--out', !product.stock);
 
     const image = document.getElementById('product-image');
@@ -400,6 +275,13 @@ if (productSection) {
 
     document.getElementById('product-order-link').href = 'order.html?product=' + product.id;
     document.getElementById('product-quick-order').dataset.product = product.name;
+    document.getElementById('product-quick-order').disabled = !product.stock;
+    const add = document.createElement('button');
+    add.type = 'button'; add.className = 'button';
+    add.textContent = product.stock ? 'В корзину' : 'Нет в наличии';
+    add.disabled = !product.stock;
+    add.addEventListener('click', () => showToast(addToCart(product.id) ? 'Товар добавлен в корзину.' : 'Достигнут лимит: 10 шт.'));
+    document.querySelector('.product__actions').append(add);
   }
 }
 
@@ -413,6 +295,12 @@ if (orderSummary) {
   const productSelect = document.getElementById('order-product');
   const quantityInput = document.getElementById('order-quantity');
   const pageForm = productSelect.form;
+  productSelect.replaceChildren(new Option('Выберите товар', ''));
+  products.forEach(item => {
+    const option = new Option(`${item.title} — ${formatPrice(getFinalPrice(item))}${item.isAvailable ? '' : ' — нет в наличии'}`, String(item.id));
+    option.disabled = !item.isAvailable;
+    productSelect.append(option);
+  });
 
   const DELIVERY_PRICE = 500;
   const FREE_DELIVERY_FROM = 30000;
@@ -420,7 +308,7 @@ if (orderSummary) {
   // Товар можно передать в адресе: order.html?product=3.
   const productFromUrl = getProductFromUrl('product');
 
-  if (productFromUrl) {
+  if (productFromUrl && productFromUrl.stock) {
     productSelect.value = String(productFromUrl.id);
   }
 

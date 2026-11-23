@@ -6,8 +6,7 @@
   Практическая работа №17: поиск, фильтр и сортировка переехали в catalog.js.
 */
 
-console.log('Файл main.js подключён');
-console.table(products);
+
 
 /* ---------- Функции для одного товара (ПР №15) ----------
    formatPrice, calculateDiscount, calculateFinalPrice и getProductStatus
@@ -68,26 +67,6 @@ function calculateAveragePrice(items) {
   return Math.round(totalPrice / items.length);
 }
 
-/* ---------- Проверка в консоли ---------- */
-
-console.log(getProductTitles(products));
-console.table(getAvailableProducts(products));
-console.table(sortProductsByPrice(products, 'asc'));
-console.table(sortProductsByPrice(products, 'desc'));
-
-const selectedProduct = findProductById(products, 3);
-
-if (selectedProduct) {
-  console.log(`Найден товар: ${selectedProduct.title}`);
-} else {
-  console.log('Товар не найден');
-}
-
-console.log(calculateTotalPrice(products));
-console.log(countAvailableProducts(products));
-console.log(calculateAveragePrice(products));
-console.log(createProductSummary(products[3]));
-
 /* ---------- Вывод на страницу ---------- */
 
 // Элементы есть только на главной, поэтому проверяем их перед записью.
@@ -95,7 +74,7 @@ const messageElement = document.querySelector('.js-message');
 const productOutputElement = document.querySelector('.product-output');
 
 if (messageElement) {
-  messageElement.textContent = 'Массив товаров и функции обработки данных подключены.';
+  messageElement.textContent = 'Выберите товар в каталоге — поиск и фильтры помогут найти подходящий вариант.';
 }
 
 if (productOutputElement) {

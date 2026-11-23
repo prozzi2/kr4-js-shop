@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/feedback.js" defer></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/kr3-scripts.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
@@ -30,11 +33,13 @@
         <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="cart.html">Корзина (<span data-cart-count>0</span>)</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="onas.html">О нас</a></li>
       </ul>
     </nav>
   </div>
 </header>
+<p class="shop-status" data-shop-status role="status" aria-live="polite"></p>
 
 <main class="main" id="main" tabindex="-1">
   <nav class="breadcrumbs" aria-label="Хлебные крошки">
@@ -162,7 +167,7 @@
               <td data-label="Вес">3,5 кг</td>
               <td data-label="Техника">верх, боковое давление</td>
               <td data-label="Гарантия">2 турнирных сезона</td>
-              <td data-label="Цена">20&nbsp;500&nbsp;₽</td>
+              <td data-label="Цена">20&nbsp;400&nbsp;₽</td>
             </tr>
         </tbody>
       </table>
@@ -267,7 +272,7 @@
           <p class="product-card__badge">Скидка −15%</p>
           <h3 class="product-card__title"><a href="product.html?id=4">Рука «Валькирия» — левая женская</a></h3>
           <p class="product-card__description">Левая «Валькирия» для борьбы на обе руки. Та же быстрая кисть, а сейчас ещё и по сниженной цене.</p>
-          <p class="product-card__price">20&nbsp;500&nbsp;₽ <span class="visually-hidden">Старая цена:</span> <del>24&nbsp;000&nbsp;₽</del></p>
+          <p class="product-card__price">20&nbsp;400&nbsp;₽ <span class="visually-hidden">Старая цена:</span> <del>24&nbsp;000&nbsp;₽</del></p>
           <div class="product-card__actions">
             <a class="button button--ghost" href="product.html?id=4" aria-label="Подробнее: Рука «Валькирия» — левая женская">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="Рука «Валькирия» — левая женская" aria-label="Заказать: Рука «Валькирия» — левая женская">Заказать</button>
