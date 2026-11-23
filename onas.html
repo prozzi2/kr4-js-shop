@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — Shop_ot_bob</title>
+  <meta name="description" content="О проекте Shop_ot_bob — учебном интернет-магазине необычных товаров.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+<header class="page-header">
+  <div class="site-header">
+    <a class="site-logo" href="index.html">Shop_ot_bob</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+      Меню
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="onas.html" aria-current="page">О нас</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="main" id="main" tabindex="-1">
+  <h1 class="page-title">О нас</h1>
+
+  <div class="about">
+    <picture>
+      <source type="image/webp" srcset="images/founder-240.webp 1x, images/founder-480.webp 2x">
+      <img
+        class="about__image"
+        src="images/founder-240.jpg"
+        srcset="images/founder-240.jpg 1x, images/founder-480.jpg 2x"
+        alt="Рисунок: основатель магазина — кудрявый парень в очках, футболке и спортивных штанах"
+        width="240"
+        height="328"
+        loading="lazy"
+      >
+    </picture>
+
+    <div>
+      <p>
+        Shop_ot_bob — учебный интернет-магазин необычных товаров с характером. Мы подошли к созданию каталога с юмором:
+        здесь даже рука для армрестлинга становится товаром, а её описание — поводом улыбнуться.
+      </p>
+      <p>
+        Сайт создан в рамках изучения фронтенд- и бэкенд-разработки. На нём мы учимся оформлять карточки товаров,
+        создавать удобную навигацию и работать с формами заказов.
+      </p>
+      <p>
+        Наш проект постепенно развивается: появляются новые страницы, функции и идеи.
+        Заглядывайте в <a href="catalog.html">каталог</a> и знакомьтесь с тем, что мы придумали!
+      </p>
+      <p><strong>Поборитесь со мной уже нормально!</strong></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <p class="site-footer__title">Shop_ot_bob</p>
+      <p>Учебный интернет-магазин необычных товаров с характером.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Навигация в подвале">
+      <p class="site-footer__title">Разделы</p>
+      <ul class="site-footer__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="onas.html">О нас</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <p class="site-footer__title">Контакты</p>
+      <ul class="site-footer__list">
+        <li><a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li><a href="mailto:shop@example.com">shop@example.com</a></li>
+      </ul>
+      <p class="site-footer__copy">&copy; 2026 Учебный проект. Все права защищены. Работал Исмаилов Полад, ЭФБО-04-25.</p>
+      <p class="site-footer__copy">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </div>
+</footer>
+
+<a class="back-to-top" href="#top" aria-label="Наверх, к началу страницы"><span aria-hidden="true">↑</span></a>
+</body>
+</html>
